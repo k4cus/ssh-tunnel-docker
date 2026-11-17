@@ -98,10 +98,10 @@ if [ -n "\$SSH_OPTIONS" ]; then
 fi
 
 # Run extra command like adding static routes
-if [ -n "$EXTRA_COMMAND" ]; then
-    echo "Running extra command: $EXTRA_COMMAND"
-    eval "$EXTRA_COMMAND" || {
-        echo "ERROR: Failed to execute: $EXTRA_COMMAND"
+if [ -n "\$EXTRA_COMMAND" ]; then
+    echo "Running extra command: \$EXTRA_COMMAND"
+    eval "\$EXTRA_COMMAND" || {
+        echo "ERROR: Failed to execute: \$EXTRA_COMMAND"
         exit 1
     }
 fi
