@@ -62,6 +62,7 @@ docker-compose -f docker-compose.yml up -d
 | `SSH_LOCAL_FORWARD` | ❌ | - | Local port forwarding spec: `[bind_address:]local_port:remote_host:remote_port` |
 | `SSH_REMOTE_FORWARD` | ❌ | - | Remote port forwarding spec: `[bind_address:]remote_port:local_host:local_port` |
 | `SSH_OPTIONS` | ❌ | - | Additional SSH client options |
+| `EXTRA_COMMAND` | ❌ | - | Additional command e.g. adding static routes |
 
 ## Port Forwarding Examples
 
