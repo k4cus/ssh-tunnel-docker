@@ -97,6 +97,16 @@ if [ -n "\$SSH_OPTIONS" ]; then
     SSH_CMD="\$SSH_CMD \$SSH_OPTIONS"
 fi
 
+# Run extra command like adding static routes
+if [ -n "$EXTRA_COMMAND" ]; then
+    echo "Running extra command: $EXTRA_COMMAND"
+    eval "$EXTRA_COMMAND" || {
+        echo "ERROR: Failed to execute: $EXTRA_COMMAND"
+        exit 1
+    }
+fi
+
+
 # Add port forwarding
 if [ -n "\$SSH_LOCAL_FORWARD" ]; then
     # If no bind address is specified, default to bind to all interfaces (0.0.0.0)
